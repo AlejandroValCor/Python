@@ -4,7 +4,9 @@ from .database import engine
 from .routers import post, user, auth, vote
 from .config import settings
 
-models.Base.metadata.create_all(bind=engine)
+# Command that told SQL Alchemy to run the create statement that generates all tables when starting.
+# No longer needed after the implementation of Alembic.
+# models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
@@ -19,7 +21,7 @@ def root():
 
 # Notes
 
-# New virtual enviornment
+# Create new virtual enviornment
 # py -3 -m venv venv
 
 # Activate virtual environment in terminal
